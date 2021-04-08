@@ -78,30 +78,7 @@ namespace ARKitStream.Internal
 
             public override bool permissionGranted => true;
 
-            private static string ShaderName
-            {
-                get
-                {
-                    var pipeline = GraphicsSettings.renderPipelineAsset;
-                    if (pipeline == null)
-                    {
-                        return "Unlit/ARKitBackground";
-                    }
-#if MODULE_URP_ENABLED
-                    else if (pipeline is UniversalRenderPipelineAsset)
-                    {
-                        return "Unlit/ARKitURPBackground";
-                    }
-#elif MODULE_LWRP_ENABLED
-                    else if (pipeline is LightweightRenderPipelineAsset)
-                    {
-                        return "Unlit/ARKitLWRPBackground";
-                    }
-#endif
-                    Debug.LogError($"{pipeline} is not supported in ARKit");
-                    return "Unlit/ARKitBackground";
-                }
-            }
+            private const string ShaderName = "Unlit/ARKitBackground";
 
             public ARKitRemoteProvider()
             {
