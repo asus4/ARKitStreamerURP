@@ -36,7 +36,6 @@ MonoBehaviour:
     m_Url: https://registry.npmjs.com
     m_Scopes:
     - jp.keijiro
-    - com.koki-ibukuro
     m_IsDefault: 0
     m_Capabilities: 0
   m_UserSelectedRegistryName: 
